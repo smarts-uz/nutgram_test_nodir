@@ -4,15 +4,15 @@ namespace App\Telegram\Commands;
 
 use SergiX44\Nutgram\Nutgram;
 
-class OnMessageCommand
+class OnEditedMessage
 {
     public function __invoke(Nutgram $bot): void
     {
-        $bot->sendMessage($this->getMessage(). $bot->message()->text);
+        $bot->sendMessage($this->getMessage() . $bot->message()->text);
     }
 
     public function getMessage(): string
     {
-        return 'Your message: ';
+        return 'Your message Edit: ';
     }
 }

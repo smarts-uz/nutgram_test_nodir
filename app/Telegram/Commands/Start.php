@@ -4,7 +4,7 @@ namespace App\Telegram\Commands;
 
 use SergiX44\Nutgram\Nutgram;
 
-class StartCommand
+class Start
 {
     public function __invoke(Nutgram $bot): void
     {
