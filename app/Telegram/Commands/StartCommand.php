@@ -2,9 +2,6 @@
 
 namespace App\Telegram\Commands;
 
-use App\Telegram\Design\Button\StartKeyboardBuilder;
-use App\Telegram\Design\Button\Director;
-use Illuminate\Support\Facades\Log;
 use SergiX44\Nutgram\Nutgram;
 
 class StartCommand
