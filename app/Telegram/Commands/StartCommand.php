@@ -12,7 +12,7 @@ class StartCommand
         $bot->sendMessage(text: $this->getMessage()/*, reply_markup: $addBotKeyboard->getBaseType()*/);
     }
 
-    private function getMessage(): string
+    public function getMessage(): string
     {
         return 'Livegram Bot is a builder of feedback bots for Telegram. Read more about it.';
     }

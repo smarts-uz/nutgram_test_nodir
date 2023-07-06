@@ -11,7 +11,7 @@ class OnMessageCommand
         $bot->sendMessage($this->getMessage(). $bot->message()->text);
     }
 
-    private function getMessage(): string
+    public function getMessage(): string
     {
         return 'Your message: ';
     }
