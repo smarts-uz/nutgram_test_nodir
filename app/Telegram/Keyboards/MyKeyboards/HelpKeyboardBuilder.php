@@ -14,7 +14,7 @@ class HelpKeyboardBuilder implements Builder
 
     public function addButton(): void
     {
-        $button = new Buttons(new InlineKeyboardButton());
+        $button = new Buttons(keyboardButton: new InlineKeyboardButton(text: ''));
         $this->inlineKeyboard->setPart($button->help(), $button->myBots());
         $this->inlineKeyboard->setPart($button->back());
     }
