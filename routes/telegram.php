@@ -3,6 +3,8 @@
 /** @var Nutgram $bot */
 
 use App\Telegram\AnswerCallbackQuerys\Help as HelpQuery;
+use App\Telegram\AnswerCallbackQuerys\MyBots as MyBotsQuery;
+use App\Telegram\AnswerCallbackQuerys\Back as BackQuery;
 use App\Telegram\Commands\Help;
 use App\Telegram\Commands\OnMessage;
 use App\Telegram\Commands\OnEditedMessage;
@@ -29,6 +31,8 @@ $bot->onCommand(command: 'conversation', callable: MyConversation::class)
     ->scope(new BotCommandScopeAllPrivateChats);
 
 $bot->onCallbackQueryData(pattern: 'help', callable: HelpQuery::class);
+$bot->onCallbackQueryData(pattern: 'myBots', callable: MyBotsQuery::class);
+$bot->onCallbackQueryData(pattern: 'back', callable: BackQuery::class);
 
 $bot->onMessage(callable: OnMessage::class);
 
