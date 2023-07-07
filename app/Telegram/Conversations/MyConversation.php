@@ -2,19 +2,18 @@
 
 namespace App\Telegram\Conversations;
 
-use Psr\SimpleCache\InvalidArgumentException;
 use SergiX44\Nutgram\Conversations\Conversation;
 use SergiX44\Nutgram\Nutgram;
 
 class MyConversation extends Conversation
 {
-    public const secondStep = 'secondStep';
+    public const SECOND_STEP = 'secondStep';
 
     protected ?string $step = 'conversation';
     public function conversation(Nutgram $bot): void
     {
         $bot->sendMessage($this->getMessage());
-        $this->next(step: self::secondStep);
+        $this->next(step: self::SECOND_STEP);
     }
 
     public function secondStep(Nutgram $bot): void

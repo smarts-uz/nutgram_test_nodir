@@ -11,7 +11,6 @@ use App\Telegram\Conversations\MyConversation;
 use App\Telegram\Middleware\SendMessage;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\RunningMode\Webhook;
-use SergiX44\Nutgram\Telegram\Attributes\MessageTypes;
 use SergiX44\Nutgram\Telegram\Types\Command\BotCommandScopeAllPrivateChats;
 
 /* running webhook mode */
@@ -25,7 +24,9 @@ $bot->onCommand(command: 'help', callable: Help::class)
     ->description(description: 'The addbot command!')
     ->scope(new BotCommandScopeAllPrivateChats);
 
-$bot->onCommand(command: 'conversation', callable: MyConversation::class);
+$bot->onCommand(command: 'conversation', callable: MyConversation::class)
+    ->description(description: 'The conversation command!')
+    ->scope(new BotCommandScopeAllPrivateChats);
 
 $bot->onCallbackQueryData(pattern: 'help', callable: HelpQuery::class);
 

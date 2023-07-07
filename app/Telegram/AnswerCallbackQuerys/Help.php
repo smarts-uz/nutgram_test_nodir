@@ -8,6 +8,7 @@ class Help
 {
     public function __invoke(Nutgram $bot): void
     {
+        $bot->message()->delete();
         $bot->sendMessage(text: 'Help query');
     }
 }
