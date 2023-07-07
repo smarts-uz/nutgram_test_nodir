@@ -8,7 +8,7 @@ class OnMessage
 {
     public function __invoke(Nutgram $bot): void
     {
-        $bot->sendMessage($this->getMessage(). $bot->message()->text);
+        $bot->sendMessage(text: $this->getMessage(). $bot->message()->text);
     }
 
     public function getMessage(): string

@@ -13,6 +13,11 @@ readonly class Buttons
         return $this->execute(text: 'Help', callback_data: 'help');
     }
 
+    public function test(): BaseType
+    {
+        return $this->execute(text: 'Test', callback_data: 'test');
+    }
+
     public function myBots(): BaseType
     {
         return $this->execute(text: 'My Bots', callback_data: 'myBots');
