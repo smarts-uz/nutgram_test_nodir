@@ -25,7 +25,7 @@ $bot->onCommand(command: 'help', callable: Help::class)
     ->description(description: 'The addbot command!')
     ->scope(new BotCommandScopeAllPrivateChats);
 
-$bot->onCommand('conversation', MyConversation::class);
+$bot->onCommand(command: 'conversation', callable: MyConversation::class);
 
 $bot->onCallbackQueryData(pattern: 'help', callable: HelpQuery::class);
 
@@ -34,4 +34,4 @@ $bot->onMessage(callable: OnMessage::class);
 $bot->onEditedMessage(callable: OnEditedMessage::class);
 
 $bot->registerMyCommands();
-$bot->run();
+//$bot->run();

@@ -8,6 +8,7 @@ use SergiX44\Nutgram\Nutgram;
 
 class MyConversation extends Conversation
 {
+    protected ?string $step = 'conversation';
     public function conversation(Nutgram $bot)
     {
         $bot->sendMessage('This is the first step!');
